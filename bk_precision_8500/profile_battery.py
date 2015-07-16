@@ -101,11 +101,9 @@ def TalkToLoad(load, port, baudrate):
             print "    ", value
             if not gotVoltage:
                 Vlast = float(value.split(" ")[0])
-                print "Wrote voltage"
                 f.write(str(Vlast))
                 gotVoltage = True
             else:
-                print "Wrote other"
                 f.write(value.split(" ")[0])
             f.write('\t')
         f.write("\n")
