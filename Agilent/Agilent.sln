@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarlingtonBenchmark", "Darl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1MeterTest", "1MeterTest\1MeterTest.csproj", "{9B43EE3F-C433-4434-8656-8F4CB1CA3D8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeasureOutputCurrent", "MeasureOutputCurrent\MeasureOutputCurrent.csproj", "{E3882900-E912-40C7-BFC4-D0EA0537BCC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{9B43EE3F-C433-4434-8656-8F4CB1CA3D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B43EE3F-C433-4434-8656-8F4CB1CA3D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B43EE3F-C433-4434-8656-8F4CB1CA3D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3882900-E912-40C7-BFC4-D0EA0537BCC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3882900-E912-40C7-BFC4-D0EA0537BCC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3882900-E912-40C7-BFC4-D0EA0537BCC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3882900-E912-40C7-BFC4-D0EA0537BCC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
