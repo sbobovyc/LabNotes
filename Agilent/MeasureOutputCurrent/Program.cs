@@ -112,13 +112,16 @@ namespace MeasureOutputCurrent
             StreamWriter log_file = File.AppendText("multimeter_debug_log.csv");
             // write header
             log_file.WriteLine("Time, Current");
-            u3606a_dev1.Measurement.Fetch();
+
+            u3606a_dev1.System.TimeoutMilliseconds = 2000;
+            Console.WriteLine("Timeout in ms " + u3606a_dev1.System.TimeoutMilliseconds);
+            
             try
             {
                 while (keepRunning)
                 {
 
-                    current = u3606a_dev1.Output.CurrentAmplitude
+                    current = u3606a_dev1.Output.CurrentAmplitude;
                     time = DateTime.Now.ToString("hh:mm:ss.fff tt");
 
                     line = string.Join(", ", new string[] { time, current.ToString() });
