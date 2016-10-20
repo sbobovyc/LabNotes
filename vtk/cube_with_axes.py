@@ -3,6 +3,16 @@ import vtk
 # The colors module defines various useful colors.
 from vtk.util.colors import tomato
 
+class vtkTimerCallback():
+   def __init__(self):
+       self.timer_count = 0
+ 
+   def execute(self,obj,event):
+       print(self.timer_count)
+       iren = obj
+       ren.GetActiveCamera().Roll(5)
+       iren.GetRenderWindow().Render()
+       self.timer_count += 1
 
 class MyInteractorStyle(vtk.vtkInteractorStyleTrackballCamera):
  
@@ -72,6 +82,10 @@ renWin.SetSize(800, 800)
 # This allows the interactor to initalize itself. It has to be
 # called before an event loop.
 iren.Initialize()
+
+cb = vtkTimerCallback()
+iren.AddObserver('TimerEvent', cb.execute)
+iren.CreateRepeatingTimer(100)
  
 # We'll zoom in a little by accessing the camera and invoking a "Zoom"
 # method on it.
@@ -79,7 +93,6 @@ ren.ResetCamera()
 ren.GetActiveCamera().Zoom(0.5)
 ren.GetActiveCamera().Elevation(45)
 ren.GetActiveCamera().Roll(-15)
-print(ren.GetActiveCamera().GetModelViewTransformMatrix())
 renWin.Render()
 renWin.SetWindowName("Cube with axes")
  
